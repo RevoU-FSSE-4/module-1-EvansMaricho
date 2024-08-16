@@ -3,6 +3,8 @@ import React from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 
+// Make type variable and function for type data of value form submit
+
 type StepProps = {
   prevStep: () => void;
   formValues: {
@@ -11,6 +13,8 @@ type StepProps = {
   };
   handleFormSubmit: (values: any) => void;
 };
+
+//input type data form to object variable step3 and use formik for validation schema
 
 const Step3: React.FC<StepProps> = ({
   prevStep,
@@ -26,8 +30,7 @@ const Step3: React.FC<StepProps> = ({
       username: Yup.string().required("Username is required"),
       password: Yup.string()
         .min(8, "Password must be at least 8 characters long")
-        .matches(
-          /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/,
+        .required(
           "Password must contain one uppercase, one lowercase, one number, and one special character"
         )
         .required("Password is required"),

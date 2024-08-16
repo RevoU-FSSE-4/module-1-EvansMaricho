@@ -3,6 +3,8 @@ import React from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 
+// Make type variable and function for type data of value form submit
+
 type StepProps = {
   nextStep: () => void;
   formValues: {
@@ -13,6 +15,8 @@ type StepProps = {
   };
   setFormValues: React.Dispatch<React.SetStateAction<any>>;
 };
+
+//input type data form to object variable step1 and use formik for validation schema
 
 const Step1: React.FC<StepProps> = ({
   nextStep,
